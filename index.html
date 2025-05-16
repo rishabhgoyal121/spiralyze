@@ -569,21 +569,25 @@
         <button
           class="testimonial-arrow left"
           aria-label="Previous testimonial"
+          onclick="showPrevTestimonial()"
         >
           &#10094;
         </button>
         <div class="testimonial-image-card">
           <img
-            src="understand-1.png"
+            id="testimonial-image"
+            src="testimonial-1.png"
             alt="Testimonial"
             class="testimonial-image"
           />
         </div>
         <div class="testimonial-content-card">
           <div class="testimonial-content-inner">
-            <div class="testimonial-name">Abbie Harvey</div>
+            <div class="testimonial-name" id="testimonial-name">
+              Abbie Harvey
+            </div>
             <div class="testimonial-quote-icon">&#8220;&#8220;</div>
-            <div class="testimonial-text">
+            <div class="testimonial-text" id="testimonial-text">
               I have been caring for my mom & dad off and on for about 10 years
               now, and I know the importance of me being there for appointments.
               Older people need attention, love and care that they truly
@@ -591,16 +595,73 @@
             </div>
           </div>
         </div>
-        <button class="testimonial-arrow right" aria-label="Next testimonial">
+        <button
+          class="testimonial-arrow right"
+          aria-label="Next testimonial"
+          onclick="showNextTestimonial()"
+        >
           &#10095;
         </button>
       </div>
       <div class="testimonial-pagination">
-        <span class="testimonial-dot active"></span>
-        <span class="testimonial-dot"></span>
-        <span class="testimonial-dot"></span>
+        <span
+          class="testimonial-dot active"
+          onclick="goToTestimonial(0)"
+        ></span>
+        <span class="testimonial-dot" onclick="goToTestimonial(1)"></span>
+        <span class="testimonial-dot" onclick="goToTestimonial(2)"></span>
       </div>
     </div>
+
+    <script>
+      const testimonials = [
+        {
+          image: "testimonial-1.png",
+          name: "Abbie Harvey",
+          text: "I have been caring for my mom & dad off and on for about 10 years now, and I know the importance of me being there for appointments. Older people need attention, love and care that they truly deserve.",
+        },
+        {
+          image: "testimonial-2.png",
+          name: "Michael Turner",
+          text: "The support and guidance I received made a real difference. The team truly understands the needs of families and provides comfort every step of the way.",
+        },
+        {
+          image: "testimonial-3.png",
+          name: "Sophie Bennett",
+          text: "I appreciate the dedication and compassion shown. It’s reassuring to know there are people who genuinely care about the well-being of our loved ones.",
+        },
+      ];
+      let currentTestimonial = 0;
+
+      function updateTestimonial() {
+        const testimonial = testimonials[currentTestimonial];
+        document.getElementById("testimonial-image").src = testimonial.image;
+        document.getElementById("testimonial-name").textContent =
+          testimonial.name;
+        document.getElementById("testimonial-text").textContent =
+          testimonial.text;
+        const dots = document.querySelectorAll(".testimonial-dot");
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === currentTestimonial);
+        });
+      }
+
+      function showPrevTestimonial() {
+        currentTestimonial =
+          (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial();
+      }
+
+      function showNextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial();
+      }
+
+      function goToTestimonial(idx) {
+        currentTestimonial = idx;
+        updateTestimonial();
+      }
+    </script>
 
     <style>
       .bottom-info-section {
