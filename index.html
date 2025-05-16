@@ -669,9 +669,9 @@
             To stimulate social contacts, neighborhood initiatives can be
             developed. Social meeting places, such as pubs and churches can help
             to foster the development of close and peripheral relationships.
-            <div class="success-rate-btn">
+            <button class="success-rate-btn">
               92% Success Rate <span class="arrow">→</span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -838,6 +838,8 @@
         position: relative;
       }
       .success-rate-btn {
+        all: unset;
+        /* Custom styles below */
         margin-top: 32px;
         display: inline-block;
         border: 2px solid #6fd1b8;
@@ -847,14 +849,35 @@
         border-radius: 8px;
         padding: 12px 32px;
         background: #fff;
-        transition: background 0.2s, color 0.2s;
+        transition: background 0.2s, color 0.2s, box-shadow 0.3s, transform 0.2s;
         cursor: pointer;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+        outline: none;
+        position: relative;
+        overflow: hidden;
+        font-family: "Montserrat", Arial, sans-serif;
       }
       .success-rate-btn .arrow {
         font-size: 28px;
         margin-left: 12px;
         vertical-align: middle;
+        transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), color 0.2s;
+      }
+      .success-rate-btn:hover,
+      .success-rate-btn:focus {
+        background: linear-gradient(90deg, #6fd1b8 0%, #36c2a6 100%);
+        color: #fff;
+        box-shadow: 0 8px 32px 0 rgba(54, 194, 166, 0.18);
+        transform: translateY(-2px) scale(1.04);
+      }
+      .success-rate-btn:hover .arrow,
+      .success-rate-btn:focus .arrow {
+        color: #fff;
+        transform: translateX(8px) scale(1.2);
+      }
+      .success-rate-btn:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 8px 0 rgba(54, 194, 166, 0.1);
       }
       @media (max-width: 1100px) {
         .bottom-info-images {
