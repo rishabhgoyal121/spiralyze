@@ -373,6 +373,91 @@
         }
       }
     </style>
+    <script>
+      // Video play logic for watch-video-section
+      document.addEventListener("DOMContentLoaded", function () {
+        const playBtn = document.querySelector(".watch-video-play-btn");
+        const videoSection = document.querySelector(".watch-video-section");
+        const videoRight = document.querySelector(".watch-video-right");
+        if (playBtn && videoSection && videoRight) {
+          playBtn.addEventListener("click", function () {
+            // Remove play button
+            playBtn.style.display = "none";
+            // Remove background image from right
+            videoRight.style.background = "none";
+            // Create overlay div
+            const overlay = document.createElement("div");
+            overlay.className = "video-overlay";
+            overlay.style.position = "absolute";
+            overlay.style.top = "0";
+            overlay.style.left = "0";
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.zIndex = "100";
+            overlay.style.background = "rgba(0,0,0,0.85)";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+
+            // Create iframe
+            const iframe = document.createElement("iframe");
+            iframe.src =
+              "https://www.youtube.com/embed/cO6kPYnSit4?autoplay=1&rel=0&showinfo=0";
+            iframe.frameBorder = "0";
+            iframe.allow = "autoplay; encrypted-media";
+            iframe.allowFullscreen = true;
+            iframe.style.width = "80vw";
+            iframe.style.height = "45vw";
+            iframe.style.maxWidth = "1000px";
+            iframe.style.maxHeight = "562px";
+            iframe.style.background = "#000";
+            iframe.style.borderRadius = "12px";
+            overlay.appendChild(iframe);
+
+            // Create close button
+            const closeBtn = document.createElement("button");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.setAttribute("aria-label", "Close video");
+            closeBtn.style.position = "absolute";
+            closeBtn.style.top = "24px";
+            closeBtn.style.right = "36px";
+            closeBtn.style.fontSize = "48px";
+            closeBtn.style.color = "#fff";
+            closeBtn.style.background = "rgba(0,0,0,0.5)";
+            closeBtn.style.border = "none";
+            closeBtn.style.borderRadius = "50%";
+            closeBtn.style.width = "56px";
+            closeBtn.style.height = "56px";
+            closeBtn.style.cursor = "pointer";
+            closeBtn.style.zIndex = "101";
+            closeBtn.style.display = "flex";
+            closeBtn.style.alignItems = "center";
+            closeBtn.style.justifyContent = "center";
+            closeBtn.style.transition = "background 0.2s";
+            closeBtn.onmouseenter = function () {
+              closeBtn.style.background = "#6fd1b8";
+            };
+            closeBtn.onmouseleave = function () {
+              closeBtn.style.background = "rgba(0,0,0,0.5)";
+            };
+            overlay.appendChild(closeBtn);
+
+            // Make videoSection position relative if not already
+            if (getComputedStyle(videoSection).position === "static") {
+              videoSection.style.position = "relative";
+            }
+            videoSection.appendChild(overlay);
+
+            // Close logic
+            closeBtn.addEventListener("click", function () {
+              overlay.remove();
+              playBtn.style.display = "";
+              videoRight.style.background = "";
+            });
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <div class="container">
