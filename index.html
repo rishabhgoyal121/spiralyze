@@ -1491,6 +1491,23 @@
             </li>
           </ul>
         </div>
+        <svg
+          class="curved-separator"
+          width="80"
+          height="100%"
+          viewBox="0 0 80 400"
+          preserveAspectRatio="none"
+          style="display: block; position: relative; z-index: 2"
+        >
+          <!-- Fill the left side of the curve with #22695e, curve shifted right -->
+          <path d="M0,0 Q80,200 0,400 Z" fill="#22695e" />
+          <path
+            d="M20,0 Q80,200 17,400"
+            fill="none"
+            stroke="rgba(255,255,255,0.2)"
+            stroke-width="30"
+          />
+        </svg>
         <div class="watch-video-right">
           <button class="watch-video-play-btn">
             <svg
@@ -1602,7 +1619,7 @@
     <style>
       .watch-video-section {
         width: 100vw;
-        background: #22695e;
+        /* background: #22695e; */
         min-height: 0;
         display: flex;
         align-items: center;
@@ -1639,6 +1656,7 @@
         justify-content: center;
         padding: 64px 0 64px 80px;
         color: #fff;
+        background: #22695e;
       }
       .watch-video-title {
         display: flex;
@@ -1706,6 +1724,9 @@
         height: 100%;
         min-height: 0;
         background: url("video-bg.png") center center/cover no-repeat;
+        margin-left: -50px;
+        position: relative;
+        z-index: 1;
       }
       .watch-video-img {
         width: 100%;
@@ -1836,6 +1857,22 @@
         .watch-video-cta {
           font-size: 12px;
         }
+      }
+      .watch-video {
+        display: flex;
+        align-items: stretch;
+        position: relative;
+      }
+      .watch-video-left,
+      .watch-video-right {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+      .curved-separator {
+        flex: 0 0 60px;
+        height: 100%;
+        background: transparent;
+        margin: 0 -10px 0 0;
       }
     </style>
     <style>
