@@ -1351,7 +1351,7 @@
           </ul>
         </div>
         <div class="watch-video-right">
-          <div class="watch-video-play-btn">
+          <button class="watch-video-play-btn">
             <svg
               width="80"
               height="80"
@@ -1368,7 +1368,7 @@
               />
               <polygon points="32,25 60,40 32,55" fill="#fff" />
             </svg>
-          </div>
+          </button>
           <div class="watch-video-cta">
             <!-- Brand SVG Logo inserted below -->
             <svg
@@ -1573,6 +1573,14 @@
         display: block;
       }
       .watch-video-play-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        outline: inherit;
         position: absolute;
         left: 50%;
         top: 50%;
