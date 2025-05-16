@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440" />
+    <title>Get An Intervention</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        background: url("hero-section-bg.png") center top/cover no-repeat;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+      .header {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 36px 60px 0 60px;
+        box-sizing: border-box;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: #b6e2d8;
+        font-weight: 400;
+        margin-right: 4px;
+      }
+      .logo .logo-circle {
+        border: 2px solid #b6e2d8;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .nav a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.85;
+        transition: opacity 0.2s;
+      }
+      .nav a.active {
+        font-weight: 700;
+        text-decoration: underline;
+        opacity: 1;
+      }
+      .nav .divider {
+        color: #b6e2d8;
+        margin: 0 18px;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+      .nav .consult {
+        color: #fff;
+        font-weight: 700;
+        margin-left: 24px;
+        letter-spacing: 0.5px;
+      }
+      .nav .consult span {
+        color: #b6e2d8;
+        font-weight: 700;
+        margin-left: 6px;
+        font-size: 17px;
+      }
+      .main-section {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 60px 60px 0 60px;
+        min-height: 700px;
+        position: relative;
+      }
+      .hero {
+        flex: 1 1 60%;
+        color: #fff;
+        margin-top: 40px;
+        position: relative;
+        background: none;
+        border-radius: 18px;
+        overflow: hidden;
+        min-height: 380px;
+        padding: 48px 40px 48px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-title {
+        font-size: 60px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+        line-height: 1.1;
+        letter-spacing: 1px;
+      }
+      .hero-title .thin {
+        font-weight: 400;
+        color: #b6e2d8;
+        letter-spacing: 0.5px;
+      }
+      .hero-title .bold {
+        font-weight: 700;
+        color: #fff;
+        display: block;
+        margin-top: 8px;
+      }
+      .hero-desc {
+        font-size: 18px;
+        font-weight: 400;
+        color: #e0f2ef;
+        margin-top: 30px;
+        max-width: 650px;
+        line-height: 1.6;
+      }
+      .contact-form-container {
+        flex: 1 1 38%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0;
+      }
+      .contact-form {
+        background: rgba(34, 77, 66, 0.93);
+        border-radius: 18px;
+        padding: 44px 38px 38px 38px;
+        width: 430px;
+        box-sizing: border-box;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .contact-form h2 {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 32px 0;
+        text-align: center;
+      }
+      .form-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+      .form-row input {
+        flex: 1;
+      }
+      .contact-form input,
+      .contact-form select {
+        background: transparent;
+        border: 2px solid #b6e2d8;
+        border-radius: 4px;
+        padding: 14px 16px;
+        font-size: 17px;
+        color: #fff;
+        margin-bottom: 18px;
+        outline: none;
+        transition: border 0.2s;
+        font-family: "Montserrat", Arial, sans-serif;
+      }
+      .contact-form input:focus,
+      .contact-form select:focus {
+        border-color: #6fd1b8;
+      }
+      .contact-form select {
+        appearance: none;
+        -webkit-appearance: none;
+        background: url('data:image/svg+xml;utf8,<svg fill="%23b6e2d8" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>')
+          no-repeat right 16px center/18px 18px;
+        padding-right: 38px;
+      }
+      .contact-form button {
+        background: #6fd1b8;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        border: none;
+        border-radius: 8px;
+        padding: 16px 0;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+      }
+      .contact-form button:hover {
+        background: #4bbfa1;
+      }
+      .contact-form button svg {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+      }
+      /* Decorative bottom wave */
+      .bottom-wave {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 120px;
+        z-index: 1;
+        pointer-events: none;
+      }
+      @media (max-width: 1100px) {
+        .main-section {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 40px 20px 0 20px;
+        }
+        .contact-form-container {
+          width: 100%;
+          justify-content: center;
+          margin-top: 40px;
+        }
+        .contact-form {
+          width: 100%;
+          max-width: 430px;
+        }
+      }
+      @media (max-width: 700px) {
+        .header,
+        .main-section {
+          padding: 20px 8px 0 8px;
+        }
+        .hero-title {
+          font-size: 36px;
+        }
+        .contact-form {
+          padding: 24px 10px 18px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <span class="logo-circle"></span>
+        <span>GET AN</span>
+        <span style="color: #b6e2d8; font-weight: 700">INTERVENTION</span>
+      </div>
+      <nav class="nav">
+        <a href="#" class="active">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+        <span class="divider">|</span>
+        <span class="consult"
+          >CALL NOW FOR A CONSULT <span>123.456.7890</span></span
+        >
+      </nav>
+    </div>
+    <div class="main-section">
+      <div class="hero">
+        <div class="hero-title">
+          <span class="thin">GET AN</span>
+          <span class="bold">INTERVENTION</span>
+        </div>
+        <div class="hero-desc">
+          Showing greater respect to older adults can be done in several ways
+          :<br />
+          acknowledging and putting to use the talents and skills of older
+          adults; creating intergenerational initiatives; and allowing older
+          adults to stay active and independent for as long as possible.
+        </div>
+      </div>
+      <div class="contact-form-container">
+        <form class="contact-form">
+          <h2>Contact Us</h2>
+          <div class="form-row">
+            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Last Name" required />
+          </div>
+          <div class="form-row">
+            <input type="email" placeholder="Business Email" required />
+            <input type="text" placeholder="Company" />
+          </div>
+          <select required>
+            <option value="" disabled selected>Country</option>
+            <option>United States</option>
+            <option>Canada</option>
+            <option>United Kingdom</option>
+            <option>Australia</option>
+            <option>Other</option>
+          </select>
+          <button type="submit">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 21l21-9-21-9v7l15 2-15 2z" />
+            </svg>
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <svg
+      class="bottom-wave"
+      viewBox="0 0 1440 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 120C360 40 1080 200 1440 40V120H0Z" fill="#fff" />
+    </svg>
+  </body>
+</html>
