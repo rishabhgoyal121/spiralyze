@@ -15,7 +15,6 @@
         margin: 0;
         padding: 0;
         font-family: "Montserrat", Arial, sans-serif;
-        
       }
       .container {
         min-height: 100vh;
@@ -525,5 +524,174 @@
         <path d="M0 120C360 40 1080 200 1440 40V120H0Z" fill="#fff" />
       </svg>
     </div>
+    <!-- Bottom Info Section -->
+    <div class="bottom-info-section">
+      <div class="bottom-info-images">
+        <img src="understand-1.png" alt="Older adults walking" />
+        <img src="understand-2.png" alt="Older adults together" />
+        <img src="understand-3.png" alt="Group of older adults" />
+      </div>
+      <div class="bottom-info-content">
+        <div class="bottom-info-heading">
+          <span class="we">WE</span> <span class="understand">UNDERSTAND</span>
+        </div>
+        <div class="bottom-info-columns">
+          <div class="bottom-info-col">
+            Older adults want to play active and meaningful roles in their
+            lives, including as part of a social network, a neighborhood, and a
+            community. Service providers and policymakers must consider that a
+            lack of sense of purpose can become problematic as people age.
+            Engaging them in leisure activities and volunteer work is important.
+          </div>
+          <div class="bottom-info-col">
+            Older adults want to stay active and contribute to society in a
+            reciprocal manner (meaning that they want to exchange their services
+            and skills with others for the mutual benefit of the neighborhood or
+            community). Qualitative and quantitative studies published from 2005
+            to 2016 examining the social needs of older adults were eligible for
+            inclusion.
+          </div>
+          <div class="bottom-info-col">
+            To stimulate social contacts, neighborhood initiatives can be
+            developed. Social meeting places, such as pubs and churches can help
+            to foster the development of close and peripheral relationships.
+            <div class="success-rate-btn">
+              92% Success Rate <span class="arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .bottom-info-section {
+        width: 100%;
+        background: #fff;
+        padding: 64px 0 48px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      .bottom-info-images {
+        display: flex;
+        gap: 48px;
+        margin-bottom: 44px;
+      }
+      .bottom-info-images img {
+        width: 340px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+      }
+      .bottom-info-content {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        box-sizing: border-box;
+      }
+      .bottom-info-heading {
+        font-size: 48px;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 700;
+        margin-bottom: 32px;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: baseline;
+      }
+      .bottom-info-heading .we {
+        font-weight: 400;
+        color: #222;
+        margin-right: 8px;
+      }
+      .bottom-info-heading .understand {
+        font-weight: 700;
+        color: #222;
+      }
+      .bottom-info-columns {
+        display: flex;
+        gap: 48px;
+        justify-content: space-between;
+      }
+      .bottom-info-col {
+        flex: 1 1 0;
+        font-size: 20px;
+        color: #444;
+        font-family: "Montserrat", Arial, sans-serif;
+        line-height: 1.6;
+        min-width: 0;
+        position: relative;
+      }
+      .success-rate-btn {
+        margin-top: 32px;
+        display: inline-block;
+        border: 2px solid #6fd1b8;
+        color: #23b18b;
+        font-weight: 700;
+        font-size: 28px;
+        border-radius: 8px;
+        padding: 12px 32px;
+        background: #fff;
+        transition: background 0.2s, color 0.2s;
+        cursor: pointer;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+      }
+      .success-rate-btn .arrow {
+        font-size: 28px;
+        margin-left: 12px;
+        vertical-align: middle;
+      }
+      @media (max-width: 1100px) {
+        .bottom-info-images {
+          gap: 18px;
+        }
+        .bottom-info-content {
+          padding: 0 18px;
+        }
+        .bottom-info-columns {
+          gap: 18px;
+        }
+        .bottom-info-heading {
+          font-size: 32px;
+        }
+        .bottom-info-images img {
+          width: 180px;
+          height: 110px;
+        }
+      }
+      @media (max-width: 900px) {
+        .bottom-info-columns {
+          flex-direction: column;
+          gap: 32px;
+        }
+        .bottom-info-col {
+          font-size: 16px;
+        }
+        .bottom-info-images {
+          flex-direction: column;
+          gap: 18px;
+        }
+        .bottom-info-images img {
+          width: 100%;
+          max-width: 340px;
+          height: 120px;
+        }
+      }
+      @media (max-width: 700px) {
+        .bottom-info-section {
+          padding: 32px 0 24px 0;
+        }
+        .bottom-info-content {
+          padding: 0 4px;
+        }
+        .bottom-info-heading {
+          font-size: 20px;
+        }
+        .success-rate-btn {
+          font-size: 18px;
+          padding: 8px 16px;
+        }
+      }
+    </style>
   </body>
 </html>
