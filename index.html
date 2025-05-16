@@ -562,6 +562,46 @@
         </div>
       </div>
     </div>
+
+    <!-- Testimonial Carousel Section -->
+    <div class="testimonial-carousel-section">
+      <div class="testimonial-carousel-container">
+        <button
+          class="testimonial-arrow left"
+          aria-label="Previous testimonial"
+        >
+          &#10094;
+        </button>
+        <div class="testimonial-image-card">
+          <img
+            src="understand-1.png"
+            alt="Testimonial"
+            class="testimonial-image"
+          />
+        </div>
+        <div class="testimonial-content-card">
+          <div class="testimonial-content-inner">
+            <div class="testimonial-name">Abbie Harvey</div>
+            <div class="testimonial-quote-icon">&#8220;&#8220;</div>
+            <div class="testimonial-text">
+              I have been caring for my mom & dad off and on for about 10 years
+              now, and I know the importance of me being there for appointments.
+              Older people need attention, love and care that they truly
+              deserve.
+            </div>
+          </div>
+        </div>
+        <button class="testimonial-arrow right" aria-label="Next testimonial">
+          &#10095;
+        </button>
+      </div>
+      <div class="testimonial-pagination">
+        <span class="testimonial-dot active"></span>
+        <span class="testimonial-dot"></span>
+        <span class="testimonial-dot"></span>
+      </div>
+    </div>
+
     <style>
       .bottom-info-section {
         width: 100%;
@@ -690,6 +730,176 @@
         .success-rate-btn {
           font-size: 18px;
           padding: 8px 16px;
+        }
+      }
+      .testimonial-carousel-section {
+        width: 100vw;
+        background: #f7f7f7;
+        padding: 48px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      .testimonial-carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .testimonial-arrow {
+        background: none;
+        border: none;
+        font-size: 56px;
+        color: #e0e0e0;
+        cursor: pointer;
+        transition: color 0.2s;
+        padding: 0 24px;
+        user-select: none;
+        line-height: 1;
+      }
+      .testimonial-arrow:hover {
+        color: #6fd1b8;
+      }
+      .testimonial-image-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+        width: 320px;
+        height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .testimonial-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+      .testimonial-content-card {
+        background: #17695e;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+        width: 700px;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        padding: 0 48px;
+        color: #fff;
+        position: relative;
+      }
+      .testimonial-content-inner {
+        width: 100%;
+      }
+      .testimonial-name {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 18px;
+        margin-top: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+      }
+      .testimonial-quote-icon {
+        font-size: 64px;
+        color: #6fd1b8;
+        font-family: serif;
+        position: absolute;
+        top: 32px;
+        right: 48px;
+        opacity: 0.8;
+      }
+      .testimonial-text {
+        font-size: 24px;
+        font-style: italic;
+        font-family: "Montserrat", Arial, sans-serif;
+        margin-top: 12px;
+        line-height: 1.5;
+      }
+      .testimonial-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 36px;
+      }
+      .testimonial-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #e0e0e0;
+        display: inline-block;
+        transition: background 0.2s;
+      }
+      .testimonial-dot.active {
+        background: #36c2a6;
+      }
+      @media (max-width: 1200px) {
+        .testimonial-content-card {
+          width: 480px;
+          padding: 0 18px;
+          min-height: 260px;
+        }
+        .testimonial-image-card {
+          width: 180px;
+          height: 180px;
+        }
+        .testimonial-name {
+          font-size: 22px;
+        }
+        .testimonial-text {
+          font-size: 16px;
+        }
+        .testimonial-quote-icon {
+          font-size: 36px;
+          top: 18px;
+          right: 18px;
+        }
+      }
+      @media (max-width: 900px) {
+        .testimonial-carousel-container {
+          flex-direction: column;
+          gap: 24px;
+        }
+        .testimonial-content-card {
+          width: 100%;
+          min-width: 0;
+          padding: 0 8px;
+        }
+        .testimonial-image-card {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      @media (max-width: 700px) {
+        .testimonial-carousel-section {
+          padding: 24px 0 0 0;
+        }
+        .testimonial-content-card {
+          min-height: 120px;
+          padding: 0 4px;
+        }
+        .testimonial-name {
+          font-size: 16px;
+        }
+        .testimonial-text {
+          font-size: 12px;
+        }
+        .testimonial-quote-icon {
+          font-size: 18px;
+          top: 8px;
+          right: 8px;
+        }
+        .testimonial-image-card {
+          width: 60px;
+          height: 60px;
+        }
+        .testimonial-dot {
+          width: 10px;
+          height: 10px;
         }
       }
     </style>
