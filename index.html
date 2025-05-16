@@ -1314,5 +1314,277 @@
         }
       }
     </style>
+
+    <!-- Watch the Video Section -->
+    <div class="watch-video-section">
+      <div class="watch-video-content">
+        <div class="watch-video-left">
+          <div class="watch-video-title">
+            <span class="watch-video-title-outline">WATCH</span>
+            <span class="watch-video-title-bold">THE VIDEO</span>
+          </div>
+          <ul class="watch-video-list">
+            <li>
+              <span class="watch-video-list-title">Needs Assessment</span>
+              <span class="watch-video-list-desc"
+                >The Advocacy Evaluation Toolkit contains the instruments used
+                to collect data for evaluating the Consumer Voices for Coverage
+                program.</span
+              >
+            </li>
+            <li>
+              <span class="watch-video-list-title">Insurance Advocacy</span>
+              <span class="watch-video-list-desc"
+                >We are committed to advocating for appropriate coverage and
+                payment policies.</span
+              >
+            </li>
+            <li>
+              <span class="watch-video-list-title"
+                >Treatment Planning & Placement</span
+              >
+              <span class="watch-video-list-desc"
+                >Patients can better understand medical procedures, discharge
+                instructions, etc.</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="watch-video-right">
+          <div class="watch-video-preview">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+              alt="Group sitting on grass"
+              class="watch-video-img"
+            />
+            <div class="watch-video-play-btn">
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 80 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="40"
+                  cy="40"
+                  r="40"
+                  fill="#6fd1b8"
+                  fill-opacity="0.85"
+                />
+                <polygon points="32,25 60,40 32,55" fill="#fff" />
+              </svg>
+            </div>
+          </div>
+          <div class="watch-video-cta">
+            GET AN <span class="watch-video-cta-bold">INTERVENTION</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .watch-video-section {
+        width: 100vw;
+        background: #22695e;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        font-family: "Montserrat", Arial, sans-serif;
+      }
+      .watch-video-content {
+        width: 100%;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 0;
+      }
+      .watch-video-left {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 64px 0 64px 80px;
+        color: #fff;
+      }
+      .watch-video-title {
+        display: flex;
+        align-items: baseline;
+        font-size: 56px;
+        font-weight: 700;
+        margin-bottom: 48px;
+        letter-spacing: 1px;
+      }
+      .watch-video-title-outline {
+        color: transparent;
+        -webkit-text-stroke: 2px #fff;
+        margin-right: 12px;
+      }
+      .watch-video-title-bold {
+        color: #fff;
+        font-weight: 700;
+      }
+      .watch-video-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+      .watch-video-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        padding-left: 36px;
+      }
+      .watch-video-list li:before {
+        content: "\2713";
+        color: #6fd1b8;
+        font-size: 32px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+      }
+      .watch-video-list-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+      .watch-video-list-desc {
+        font-size: 20px;
+        color: #b3e5da;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .watch-video-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 80px 48px 0;
+        position: relative;
+      }
+      .watch-video-preview {
+        position: relative;
+        width: 480px;
+        height: 320px;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+        margin-bottom: 32px;
+        background: #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .watch-video-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .watch-video-play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        transition: filter 0.2s;
+      }
+      .watch-video-play-btn:hover {
+        filter: brightness(1.1) drop-shadow(0 0 8px #6fd1b8);
+      }
+      .watch-video-cta {
+        color: #b3e5da;
+        font-size: 24px;
+        font-weight: 400;
+        margin-top: 8px;
+        letter-spacing: 1px;
+        text-align: right;
+        width: 100%;
+      }
+      .watch-video-cta-bold {
+        color: #fff;
+        font-weight: 700;
+      }
+      @media (max-width: 1200px) {
+        .watch-video-title {
+          font-size: 36px;
+        }
+        .watch-video-list-title {
+          font-size: 22px;
+        }
+        .watch-video-list-desc {
+          font-size: 14px;
+        }
+        .watch-video-preview {
+          width: 320px;
+          height: 200px;
+        }
+        .watch-video-left {
+          padding: 32px 0 32px 24px;
+        }
+        .watch-video-right {
+          padding: 24px 24px 24px 0;
+        }
+      }
+      @media (max-width: 900px) {
+        .watch-video-content {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .watch-video-left,
+        .watch-video-right {
+          padding: 24px 12px;
+        }
+        .watch-video-preview {
+          width: 100%;
+          max-width: 320px;
+          height: 180px;
+          margin: 0 auto 24px auto;
+        }
+        .watch-video-right {
+          align-items: flex-end;
+        }
+      }
+      @media (max-width: 700px) {
+        .watch-video-section {
+          min-height: 0;
+        }
+        .watch-video-title {
+          font-size: 18px;
+        }
+        .watch-video-list-title {
+          font-size: 12px;
+        }
+        .watch-video-list-desc {
+          font-size: 10px;
+        }
+        .watch-video-preview {
+          width: 100%;
+          max-width: 180px;
+          height: 80px;
+        }
+        .watch-video-left,
+        .watch-video-right {
+          padding: 8px 4px;
+        }
+        .watch-video-cta {
+          font-size: 12px;
+        }
+      }
+    </style>
   </body>
 </html>
