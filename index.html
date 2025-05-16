@@ -190,7 +190,10 @@
         margin-bottom: 18px;
       }
       .form-row input {
-        flex: 1;
+        flex: 1 1 0%;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
       }
       .contact-form input,
       .contact-form select {
@@ -200,10 +203,12 @@
         padding: 14px 16px;
         font-size: 17px;
         color: #fff;
-        margin-bottom: 18px;
         outline: none;
         transition: border 0.2s;
         font-family: "Montserrat", Arial, sans-serif;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 18px;
       }
       .contact-form input:focus,
       .contact-form select:focus {
